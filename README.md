@@ -1,9 +1,11 @@
 # student_relationship
 
+This is a simple Django project that demonstrates how to create a one-to-one relationship between two models.
+
 
 ## Database schema
 
-1. Student
+1.Student
 
 | Column Name | Data Type | Description |
 | :--- | :--- | :--- |
@@ -11,7 +13,7 @@
 | first\_name | string |  Student first name |
 | last\_name | string | Student last name |
 
-2. Contact
+2.Contact
 
 | Column Name | Data Type | Description |
 | :--- | :--- | :--- |
@@ -19,7 +21,7 @@
 | phone | string | Student phone number |
 | email | string | Student email address |
 
-3. Address
+3.Address
 
 | Column Name | Data Type | Description |
 | :--- | :--- | :--- |
@@ -27,7 +29,6 @@
 | street | string | Student street address |
 | city | string | Student city |
 | country | string | Student country |
-
 
 ## Django Models
 
@@ -59,3 +60,18 @@ class Address(models.Model):
         return self.street + ' ' + self.city + ' ' + self.country
 
 ```
+## Getting data from a one-to-one relationship
+
+```python
+
+student = Student.objects.get(id=1)
+contact = student.contact
+address = student.address
+
+```
+
+## Creating a one-to-one relationship
+
+
+
+
